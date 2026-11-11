@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at center, rgba(75, 0, 12, .24) 0%, transparent 58%),
+    #080609;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+#loveCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.message {
+  position: fixed;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  width: min(92%, 700px);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  animation: messageIn 1.8s ease 5s forwards;
+  pointer-events: none;
+  text-shadow: 0 0 18px rgba(255, 34, 53, .65);
+}
+
+.eyebrow {
+  margin-bottom: 12px;
+  color: #ff9aa5;
+  font: 10px/1.5 Arial, sans-serif;
+  letter-spacing: 4px;
+}
+
+h1 {
+  font-size: clamp(27px, 6vw, 58px);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+h1 span {
+  color: #ff354b;
+}
+
+.subtitle {
+  margin-top: 14px;
+  color: #e6a6ad;
+  font: clamp(11px, 2vw, 14px) Arial, sans-serif;
+  letter-spacing: 1.5px;
+}
+
+.footer {
+  position: fixed;
+  z-index: 2;
+  bottom: 18px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: rgba(255, 126, 139, .45);
+  font: 9px Arial, sans-serif;
+  letter-spacing: 3px;
+}
+
+@keyframes messageIn {
+  from { opacity: 0; transform: translate(-50%, -43%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+@media (max-width: 480px) {
+  .eyebrow { letter-spacing: 2.5px; }
+  .footer { font-size: 8px; letter-spacing: 2px; }
+}
